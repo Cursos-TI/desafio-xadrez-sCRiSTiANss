@@ -9,10 +9,11 @@ int main() {
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
     int peca, lado, passos;
-    int repetirPassos = 1;
     char continuar;
 
     do{
+        int repetirPassos = 1;
+
         printf("==>Escolha a peça<==\n");
         printf("1 - Bispo\n");
         printf("2 - Torre\n");
@@ -50,37 +51,30 @@ int main() {
                 continue;
             }
 
-            if(passos = 1){
+            if(lado == 1){
                 do{
-                printf("%d\n", lado);
+                printf("Bispo andou na diagonal cima direita\n");
                 repetirPassos++;
             } while (repetirPassos <= passos);
             } 
             
-            else if (passos = 2){
+            else if (lado == 2){
                 do{
-                printf("%d\n", lado);
+                printf("Bispo andou na diagonal cima esquerda\n");
                 repetirPassos++;
             } while (repetirPassos <= passos);
             }
             
-            else if (passos = 3){
+            else if (lado == 3){
                 do{
-                printf("%d\n", lado);
+                printf("Bispo andou na diagonal baixo direita\n");
                 repetirPassos++;
             } while (repetirPassos <= passos);
             }
             
-            else if (passos = 4){
+            else if (lado == 4){
                 do{
-                printf("%d\n", lado);
-                repetirPassos++;
-            } while (repetirPassos <= passos);
-            }
-
-            else{
-                do{
-                printf("%d\n", lado);
+                printf("Bispo andou na diagonal baixo esquerda\n");
                 repetirPassos++;
             } while (repetirPassos <= passos);
             }
@@ -88,24 +82,147 @@ int main() {
             break;
             
             case 2: printf("Você escolheu a Torre\n");
+
+            printf("\n==>Escolha o lado<==\n");
+            printf("1 - Para cima\n");
+            printf("2 - Para direita\n");
+            printf("3 - Para esquerda\n");
+            printf("4 - Para baixo\n");
+            printf("Escolha uma opção:\n");
+            scanf("%d", &lado);
+
+            switch (lado){
+            case 1: printf("Você escolheu: Para cima\n");break;
+            case 2: printf("Você escolheu: Para direita\n");break;
+            case 3: printf("Você escolheu: Para esquerda\n");break;
+            case 4: printf("Você escolheu:  Para baixo\n");break;
+            default: printf("Opção invalida!\n"); break;
+            }
+
+            printf("\nDigite a quantidade de passos, quantas casas deseja que sua peça prossiga(de 1 a 5):\n");
+            scanf("%d", &passos);
+            if(passos >= 1 && passos <=5){
+                printf("Você escolheu andar %d passo(s) com  a Torre.\n");
+            }else {
+                printf("Você escolheu um número invalido! Escolha de 1 a 5.\n");
+                continue;
+            }
+
+            for(lado == 1; repetirPassos <= passos; repetirPassos++){
+                printf("Torre andou para cima\n");
+            }
+
+            for(lado == 2; repetirPassos <= passos; repetirPassos++){
+                printf("Torre andou para direita\n");
+            }
+
+            for(lado == 3; repetirPassos <= passos; repetirPassos++){
+                printf("Torre andou para esquerda\n");
+            }
+
+            for(lado == 4; repetirPassos <= passos; repetirPassos++){
+                printf("Torre andou para baixo\n");
+            }
             
             break;
             
             case 3: printf("Você escolheu a Rainha\n");
-            
+
+            printf("\n==>Escolha o lado<==\n");
+            printf("1 - Para cima\n");
+            printf("2 - Para direita\n");
+            printf("3 - Para esquerda\n");
+            printf("4 - Para baixo\n");
+            printf("5 - Cima direita\n");
+            printf("6 - Cima esquerda\n");
+            printf("7 - Baixo direita\n");
+            printf("8 - Baixo esquerda\n");
+            printf("Escolha uma opção:\n");
+            scanf("%d", &lado);
+
+            switch (lado){
+            case 1: printf("Você escolheu: Para cima\n");break;
+            case 2: printf("Você escolheu: Para direita\n");break;
+            case 3: printf("Você escolheu: Para esquerda\n");break;
+            case 4: printf("Você escolheu:  Para baixo\n");break;
+            case 5: printf("Você escolheu:  Cima direita\n");break;
+            case 6: printf("Você escolheu:  Cima esquerda\n");break;
+            case 7: printf("Você escolheu:  Baixo direita\n");break;
+            case 8: printf("Você escolheu:  Baixo esquerda\n");break;
+            default: printf("Opção invalida!\n"); break;
+            }
+
+            printf("\nDigite a quantidade de passos, quantas casas deseja que sua peça prossiga(de 1 a 5):\n");
+            scanf("%d", &passos);
+            if(passos >= 1 && passos <=5){
+                printf("Você escolheu andar %d passo(s) com  a Rainha.\n");
+            }else {
+                printf("Você escolheu um número invalido! Escolha de 1 a 5.\n");
+                continue;
+            }
+
+            if(lado == 1){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para cima\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 2){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para direita\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 3){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para esquerda\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 4){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para baixo\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 5){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para cima direita\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 6){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para cima esquerda\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 7){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para baixo direita\n");
+                repetirPassos++;
+            }
+            }
+            else if(lado == 8){
+            while (repetirPassos <= passos){
+                printf("Rainha andou para baixo esquerda\n");
+                repetirPassos++;
+            }
+            }
+
             break;
-            
+
             case 4: printf("Você escolheu o Cavalo\n");
             
             break;
             
             default: printf("Opção invalida\n"); continue;
+            
         }
 
-        printf("Deseja fazer outra jogada?(s/n): ");
-        scanf("%c", &continuar);
-
-
+        printf("\nDeseja fazer outra jogada?(s/n): ");
+        scanf(" %c", &continuar);
+        
 
     }while (continuar == 's' || continuar =='S');
     printf("\nEncerrando Xadrez...\n");
