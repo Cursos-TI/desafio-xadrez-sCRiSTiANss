@@ -9,6 +9,7 @@ int main() {
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
     int peca, lado, passos;
+    int repetirPassos = 1;
     char continuar;
 
     do{
@@ -51,30 +52,37 @@ int main() {
 
             if(passos = 1){
                 do{
-                printf("Cima direita");
-                passos++;
-            } while (passos <= 5);
+                printf("%d\n", lado);
+                repetirPassos++;
+            } while (repetirPassos <= passos);
             } 
             
             else if (passos = 2){
                 do{
-                printf("Cima esquerda");
-                passos++;
-            } while (passos <= 5);
+                printf("%d\n", lado);
+                repetirPassos++;
+            } while (repetirPassos <= passos);
             }
             
             else if (passos = 3){
                 do{
-                printf("Baixo direita");
-                passos++;
-            } while (passos <= 5);
+                printf("%d\n", lado);
+                repetirPassos++;
+            } while (repetirPassos <= passos);
             }
             
-            else {
+            else if (passos = 4){
                 do{
-                printf("Baixo esquerda");
-                passos++;
-            } while (passos <= 5);
+                printf("%d\n", lado);
+                repetirPassos++;
+            } while (repetirPassos <= passos);
+            }
+
+            else{
+                do{
+                printf("%d\n", lado);
+                repetirPassos++;
+            } while (repetirPassos <= passos);
             }
             
             break;
