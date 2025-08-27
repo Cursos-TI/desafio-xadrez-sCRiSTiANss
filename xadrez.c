@@ -13,6 +13,8 @@ int main() {
 
     do{
         int repetirPassos = 1;
+        int movCavalo = 0;
+        int movCavalo2 = 2;
 
         printf("==>Escolha a peça<==\n");
         printf("1 - Bispo\n");
@@ -214,6 +216,103 @@ int main() {
 
             case 4: printf("Você escolheu o Cavalo\n");
             
+            printf("\n==>Escolha o lado<==\n");
+            printf("1 - Da esquerda para cima\n");
+            printf("2 - Da esquerda para baixo\n");
+            printf("3 - Da direita para cima\n");
+            printf("4 - Da direita para baixo\n");
+            printf("5 - De cima para direita\n");
+            printf("6 - De cima para esquerda\n");
+            printf("7 - De baixo para direita\n");
+            printf("8 - De baixo para esquerda\n");
+            printf("Escolha uma opção:\n");
+            scanf("%d", &lado);
+
+            switch (lado){
+            case 1: printf("Você escolheu: Da esquerda para cima\n");break;
+            case 2: printf("Você escolheu: Da esquerda para baixo\n");break;
+            case 3: printf("Você escolheu: Da direita para cima\n");break;
+            case 4: printf("Você escolheu: Da direita para baixo\n");break;
+            case 5: printf("Você escolheu: De cima para direita\n");break;
+            case 6: printf("Você escolheu: De cima para esquerda\n");break;
+            case 7: printf("Você escolheu: De baixo para direita\n");break;
+            case 8: printf("Você escolheu: De baixo para esquerda\n");break;
+            default: printf("Opção invalida!\n"); break;
+            }
+
+            if(lado == 1){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Esquerda\n");
+            }
+            printf("Cima\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 2){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Esquerda\n");
+            }
+            printf("Baixo\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 3){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Direita\n");
+            }
+            printf("Cima\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 4){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Direita\n");
+            }
+            printf("Baixo\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 5){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Cima\n");
+            }
+            printf("Direita\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 6){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Cima\n");
+            }
+            printf("Esquerda\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 7){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Baixo\n");
+            }
+            printf("Direita\n");
+            movCavalo++;
+            }
+            }
+            else if(lado == 8){  
+            while (movCavalo < 1) {
+            for (int i = 0; i < movCavalo2; i++) {
+                printf("Baixo\n");
+            }
+            printf("Esquerda\n");
+            movCavalo++;
+            }
+            }
+
             break;
             
             default: printf("Opção invalida\n"); continue;
