@@ -1,29 +1,222 @@
+// Desafio de Xadrez - MateCheck
+
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Chamada recursiva: Bispo 
+void bispo(int lado, int passos) {
+    int i = 0;
+
+    // Loops aninhados para o bispo
+    while (i < passos) {
+        // Para cada passo, o bispo anda 1 na vertical + 1 na horizontal
+        for (int j = 0; j < 1; j++) {
+            switch (lado) {
+                case 1:
+                    printf("Cima\n");
+                    printf("Direita\n");
+                    break;
+                case 2:
+                    printf("Cima\n");
+                    printf("Esquerda\n");
+                    break;
+                case 3:
+                    printf("Baixo\n");
+                    printf("Direita\n");
+                    break;
+                case 4:
+                    printf("Baixo\n");
+                    printf("Esquerda\n");
+                    break;
+                default:
+                    printf("Movimento inválido\n");
+                    return;
+            }
+        }
+        i++;
+    }
+}
+
+// Chamada recursiva: Torre 
+void torre(int lado, int passos, int repetirPassos) {
+    if (repetirPassos > passos) return; 
+
+    // Loop for para a movimentação da torre
+    if (lado == 1) {
+        for (; repetirPassos <= passos; repetirPassos++) {
+            printf("Torre andou para cima\n");
+        }
+    }
+
+    if (lado == 2) {
+        for (; repetirPassos <= passos; repetirPassos++) {
+            printf("Torre andou para direita\n");
+        }
+    }
+
+    if (lado == 3) {
+        for (; repetirPassos <= passos; repetirPassos++) {
+            printf("Torre andou para esquerda\n");
+        }
+    }
+
+    if (lado == 4) {
+        for (; repetirPassos <= passos; repetirPassos++) {
+            printf("Torre andou para baixo\n");
+        }
+    }
+
+}
+
+// Chamada recursiva: Rainha
+void rainha(int lado, int passos) {
+    int repetirPassos = 1;
+
+    // Loop while para a movimentação da rainha
+    if (lado == 1) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para cima\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 2) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para direita\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 3) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para esquerda\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 4) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para baixo\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 5) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para cima direita\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 6) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para cima esquerda\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 7) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para baixo direita\n");
+            repetirPassos++;
+        }
+    }
+
+    if (lado == 8) {
+        while (repetirPassos <= passos) {
+            printf("Rainha andou para baixo esquerda\n");
+            repetirPassos++;
+        }
+    }
+
+}
+
+// Chamada recursiva: Cavalo
+void cavalo(int lado) {
+    int movCavalo = 0;
+    int movCavalo2 = 2;
+
+    // Loops aninhados para a movimentação do cavalo
+    while (movCavalo < 1) {
+        switch (lado) {
+            case 1:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Esquerda\n");
+                }
+                printf("Cima\n");
+                break;
+            case 2:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Esquerda\n");
+                }
+                printf("Baixo\n");
+                break;
+            case 3:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Direita\n");
+                }
+                printf("Cima\n");
+                break;
+            case 4:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Direita\n");
+                }
+                printf("Baixo\n");
+                break;
+            case 5:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Cima\n");
+                }
+                printf("Direita\n");
+                break;
+            case 6:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Cima\n");
+                }
+                printf("Esquerda\n");
+                break;
+            case 7:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Baixo\n");
+                }
+                printf("Direita\n");
+                break;
+            case 8:
+                for (int i = 0; i < movCavalo2; i++) {
+                    printf("Baixo\n");
+                }
+                printf("Esquerda\n");
+                break;
+            default:
+                printf("Movimento inválido\n");
+                return;
+        }
+
+        movCavalo++;
+    }
+}
+
+
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
+    
+    // Variaveis para movimentação das peças
     int peca, lado, passos;
+
+    // Variavel para escolha de continuar o jogo voltando do inicio com Do While
     char continuar;
 
     do{
-        int repetirPassos = 1;
-        int movCavalo = 0;
-        int movCavalo2 = 2;
 
+        //Menu com caso de escolha switch
         printf("==>Escolha a peça<==\n");
         printf("1 - Bispo\n");
         printf("2 - Torre\n");
         printf("3 - Rainha\n");
-        printf("4 - cavalo (indisponivel)\n");
+        printf("4 - Cavalo\n");
         printf("Digite a opção\n");
         scanf("%d", &peca);
 
+        //Dependendo da peça escolhida o switch oferece diferentes casos para cada uma
         switch (peca){
             case 1: 
             printf("Você escolheu o Bispo\n");
@@ -53,33 +246,8 @@ int main() {
                 continue;
             }
 
-            if(lado == 1){
-                do{
-                printf("Bispo andou na diagonal cima direita\n");
-                repetirPassos++;
-            } while (repetirPassos <= passos);
-            } 
-            
-            else if (lado == 2){
-                do{
-                printf("Bispo andou na diagonal cima esquerda\n");
-                repetirPassos++;
-            } while (repetirPassos <= passos);
-            }
-            
-            else if (lado == 3){
-                do{
-                printf("Bispo andou na diagonal baixo direita\n");
-                repetirPassos++;
-            } while (repetirPassos <= passos);
-            }
-            
-            else if (lado == 4){
-                do{
-                printf("Bispo andou na diagonal baixo esquerda\n");
-                repetirPassos++;
-            } while (repetirPassos <= passos);
-            }
+            // Chamada do void
+            bispo(lado, passos);
             
             break;
             
@@ -110,22 +278,9 @@ int main() {
                 continue;
             }
 
-            for(lado == 1; repetirPassos <= passos; repetirPassos++){
-                printf("Torre andou para cima\n");
-            }
+            // Chamada do void
+            torre(lado, passos, 1);
 
-            for(lado == 2; repetirPassos <= passos; repetirPassos++){
-                printf("Torre andou para direita\n");
-            }
-
-            for(lado == 3; repetirPassos <= passos; repetirPassos++){
-                printf("Torre andou para esquerda\n");
-            }
-
-            for(lado == 4; repetirPassos <= passos; repetirPassos++){
-                printf("Torre andou para baixo\n");
-            }
-            
             break;
             
             case 3: printf("Você escolheu a Rainha\n");
@@ -163,54 +318,8 @@ int main() {
                 continue;
             }
 
-            if(lado == 1){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para cima\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 2){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para direita\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 3){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para esquerda\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 4){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para baixo\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 5){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para cima direita\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 6){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para cima esquerda\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 7){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para baixo direita\n");
-                repetirPassos++;
-            }
-            }
-            else if(lado == 8){
-            while (repetirPassos <= passos){
-                printf("Rainha andou para baixo esquerda\n");
-                repetirPassos++;
-            }
-            }
+            // Chamada do void
+            rainha(lado, passos);
 
             break;
 
@@ -240,78 +349,8 @@ int main() {
             default: printf("Opção invalida!\n"); break;
             }
 
-            if(lado == 1){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Esquerda\n");
-            }
-            printf("Cima\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 2){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Esquerda\n");
-            }
-            printf("Baixo\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 3){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Direita\n");
-            }
-            printf("Cima\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 4){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Direita\n");
-            }
-            printf("Baixo\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 5){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Cima\n");
-            }
-            printf("Direita\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 6){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Cima\n");
-            }
-            printf("Esquerda\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 7){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Baixo\n");
-            }
-            printf("Direita\n");
-            movCavalo++;
-            }
-            }
-            else if(lado == 8){  
-            while (movCavalo < 1) {
-            for (int i = 0; i < movCavalo2; i++) {
-                printf("Baixo\n");
-            }
-            printf("Esquerda\n");
-            movCavalo++;
-            }
-            }
+            // Chamada do void
+            cavalo(lado);
 
             break;
             
@@ -319,33 +358,12 @@ int main() {
             
         }
 
+        // Opção de escolha para retornar valor booleano para retornar o Do While
         printf("\nDeseja fazer outra jogada?(s/n): ");
         scanf(" %c", &continuar);
         
-
     }while (continuar == 's' || continuar =='S');
     printf("\nEncerrando Xadrez...\n");
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
-    
     return 0;
 }
